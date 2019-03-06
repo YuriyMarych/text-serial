@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 
 // Admin routes
@@ -26,6 +23,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::post('login', 'LoginController@login')->name('admin.login');
 
     Route::group(['middleware' => 'admin'], function() {
-//        Route::get('/', 'DashboardController')->name('admin.dashboard');
+        Route::get('/', 'DashboardController@showAdmin')->name('admin.dashboard');
     });
+});
+
+// Site routes
+Route::group(['namespace' => 'Site'], function() {
+    Route::get('/', 'HomeController@index')->name('home');
 });

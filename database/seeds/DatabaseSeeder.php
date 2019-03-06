@@ -15,23 +15,23 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'role_id' => '1',
                 'name' => 'Yuriy',
                 'email' => 'stydentuss@gmail.com',
                 'password' => bcrypt('123123'),
             ],
             [
-                'role_id' => '2',
                 'name' => 'Anna',
                 'email' => 'qwerty@gmail.com',
                 'password' => bcrypt('111111'),
             ],
             [
-                'role_id' => '2',
                 'name' => 'Nazar',
                 'email' => 'pprtsm@gmail.com ',
                 'password' => bcrypt('123456'),
             ]
         ]);
+
+        $this->call(RoleSeeder::class);
+        $this->call(UserRoleSeeder::class);
     }
 }
