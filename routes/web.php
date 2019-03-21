@@ -24,10 +24,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
     Route::group(['middleware' => 'admin'], function() {
         Route::get('/', 'DashboardController@showAdmin')->name('admin.dashboard');
+
+//        Route::get('/serial', 'SerialController@index')->name('serial');
+//        Route::post('add/serial', 'SerialController@create')->name('add.serial');
     });
 });
 
 // Site routes
 Route::group(['namespace' => 'Site'], function() {
     Route::get('/', 'HomeController@index')->name('home');
+
+    Route::get('profile', 'HomeController@profile');
+    Route::post('profile', 'HomeController@update_avatar')->name('update.avatar');
 });

@@ -15,17 +15,20 @@ class DatabaseSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'Yuriy',
+                'firstName' => 'Yuriy',
+                'lastName' => 'Marych',
                 'email' => 'stydentuss@gmail.com',
                 'password' => bcrypt('123123'),
             ],
             [
-                'name' => 'Anna',
+                'firstName' => 'Anna',
+                'lastName' => 'White',
                 'email' => 'qwerty@gmail.com',
                 'password' => bcrypt('111111'),
             ],
             [
-                'name' => 'Nazar',
+                'firstName' => 'Nazar',
+                'lastName' => 'Vovk',
                 'email' => 'pprtsm@gmail.com ',
                 'password' => bcrypt('123456'),
             ]
@@ -33,5 +36,6 @@ class DatabaseSeeder extends Seeder
 
         $this->call(RoleSeeder::class);
         $this->call(UserRoleSeeder::class);
+        $this->call(SerialSeeder::class);
     }
 }

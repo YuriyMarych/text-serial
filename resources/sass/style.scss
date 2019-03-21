@@ -1,18 +1,19 @@
+//Homepage
 .homepage .title {
   color: #000;
 }
-
 .homepage .desc {
   font-size: 20px;
   color: #cccccc;
 }
 
+//Admin-homepage
 .container.admin-nav {
   background: #1b1e21;
   position: fixed;
   left: 0;
   width: 20%;
-  top: 55px;
+  top: 0;
   height: 100%;
 }
 
@@ -23,7 +24,22 @@
 .container.admin-nav .nav-item .nav-link {
   text-decoration: none;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 18px;
   text-transform: uppercase;
 }
 
+.container .profile {
+  margin-left: 55px;
+}
+
+.container .profile .user {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.container .profile .userAvatar {
+  width: 100px;
+  height: 100px;
+  margin: 20px 0;
+  border-radius:50%;
+}
