@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Serial;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class SerialController extends Controller
 {
@@ -15,14 +16,18 @@ class SerialController extends Controller
 
     public function index()
     {
-        return view('admin.addSerial');
+        return view('admin.serials.add');
     }
 
-    protected function create(array $data)
+    protected function createSerial()
     {
-//        return Serial::create([
-//            'title' => $data['title'],
-//            'description' => $data['description'],
-//        ]);
+        DB::table('serials')->insert(
+                [
+                    'title' => $_POST['title'],
+                    'description' => $_POST['description'],
+                ]
+            );
+        return view('admin.serials.add');
     }
+
 }

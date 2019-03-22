@@ -8,7 +8,7 @@
                      style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
                 <h2>{{ $user->firstName }} {{ $user->lastName }}'s Profile</h2>
                 <form enctype="multipart/form-data" action="{{ route('update.avatar') }}" method="POST">
-                    <div class="form-group row">
+                    <div class="row flex-column form-group">
                         <label for="avatarUpload">
                         {{ __('Update Profile Image') }}
                         </label>

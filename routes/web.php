@@ -25,8 +25,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
     Route::group(['middleware' => 'admin'], function() {
         Route::get('/', 'DashboardController@showAdmin')->name('admin.dashboard');
 
-//        Route::get('/serial', 'SerialController@index')->name('serial');
-//        Route::post('add/serial', 'SerialController@create')->name('add.serial');
+        Route::get('/serials', 'SerialController@index');
+        Route::post('/serials', 'SerialController@createSerial')->name('add.serial');
     });
 });
 

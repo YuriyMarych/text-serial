@@ -3,7 +3,7 @@
 @section('content')
     <nav class="container admin-nav">
         <div class="profile">
-            <img src="storage/uploads/avatars/{{ Auth::user()->avatar }}" class="userAvatar">
+            <img src="/storage/uploads/avatars/{{ Auth::user()->avatar }}" class="userAvatar">
 
             <h2 class="user">
                 {{ Auth::user()->firstName }}
@@ -13,7 +13,7 @@
 
         <ul>
             <li class="nav-item">
-{{--                <a class="nav-link" href="{{ route('serial') }}">Add serial</a>--}}
+                <a class="nav-link" href="{{ route('add.serial') }}">Add serial</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('update.avatar') }}">Settings</a>

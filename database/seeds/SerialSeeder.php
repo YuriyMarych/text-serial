@@ -12,7 +12,7 @@ class SerialSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('serial')->insert([
+        DB::table('serials')->insert([
             [
                 'title' => 'Vikings',
                 'description' => 'Serial about hard men'
